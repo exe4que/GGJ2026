@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_ph05w"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_4nsc6"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_ve7ue"]
-[ext_resource type="Material" uid="uid://b2smt4hpqbe1o" path="res://materials/Material.tres" id="5_2o8vn"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_unnmy"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_4nsc6"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="7_2o8vn"]
@@ -37,7 +36,7 @@ strafe = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
 show_laser = 2
 laser_length = 1
-laser_material = ExtResource("5_2o8vn")
+laser_material = ExtResource("9_8bcao")
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=68046927]
 tracker = &"right_hand"
