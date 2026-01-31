@@ -24,6 +24,10 @@ XRToolsRumbleManager="*uid://by853dk86g1qw"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[gui]
+
+theme/custom="uid://ijyrm7dol1wg"
+
 [input]
 
 change_to_blue={
