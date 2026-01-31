@@ -28,6 +28,12 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://transitions/": "pink"
+}
+
 [gui]
 
 theme/custom="uid://ijyrm7dol1wg"
