@@ -4,9 +4,11 @@ extends XRToolsPickable
 @export var id : String
 
 func _ready() -> void:
-	picked_up.connect(_on_mask_pickedup)
+	dropped.connect(_on_mask_dropped)
 
 
-func _on_mask_pickedup(_mask):
-	print("picked up")
-	Global.change_mask.emit(id)
+func _on_mask_dropped(mask):
+	if Global.current_mask == null and (position - Global.player.position).length() < 0.5:
+		Global.change_mask.emit(id)
+		Global.current_mask = self
+		visible = false
