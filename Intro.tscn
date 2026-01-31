@@ -1,19 +1,54 @@
 [gd_scene format=3 uid="uid://kde7u7ny4hnp"]
 
-[ext_resource type="Texture2D" uid="uid://c76fpssben32l" path="res://Assets/sprites/bg.png" id="1_gjrx4"]
+[ext_resource type="Texture2D" uid="uid://bhuvdbhjnggam" path="res://Assets/sprites/Background.jpeg" id="1_33sem"]
+[ext_resource type="Script" uid="uid://b4yokuiwvd2oi" path="res://IntroButtons.gd" id="1_f4n53"]
 [ext_resource type="Texture2D" uid="uid://dueyu6t3gp6p1" path="res://Assets/sprites/gem-blue.png" id="2_33sem"]
 [ext_resource type="Texture2D" uid="uid://cvchr42n2kg3n" path="res://Assets/sprites/gem-orange.png" id="3_46ak0"]
+[ext_resource type="Texture2D" uid="uid://b4angk24eie07" path="res://Assets/sprites/SelectExit.png" id="3_wismm"]
 [ext_resource type="Texture2D" uid="uid://do341457fiajy" path="res://Assets/sprites/gem-pink.png" id="4_iysgs"]
+[ext_resource type="Texture2D" uid="uid://jw8ap5aa7rii" path="res://Assets/sprites/PressedExit.png" id="4_n5nwx"]
+[ext_resource type="FontFile" uid="uid://7km1j6gaaj01" path="res://Assets/fonts/space age.ttf" id="5_46ak0"]
+[ext_resource type="Texture2D" uid="uid://ddsv81eeyt6i4" path="res://Assets/sprites/ButtonExit.png" id="5_wismm"]
+[ext_resource type="Texture2D" uid="uid://dvo388fhdcmmj" path="res://Assets/sprites/SelectPlay.png" id="6_1rpvy"]
+[ext_resource type="Texture2D" uid="uid://o1y7gn722cit" path="res://Assets/sprites/SelectHome.png" id="7_6omm5"]
+[ext_resource type="Texture2D" uid="uid://bpo0v75lhwpjo" path="res://Assets/sprites/PressedPlay.png" id="7_eejac"]
+[ext_resource type="Texture2D" uid="uid://ji2bdy0btwqb" path="res://Assets/sprites/ButtonPlay.png" id="8_33olo"]
+[ext_resource type="Texture2D" uid="uid://c2m11abvoermh" path="res://Assets/sprites/PressedHome.png" id="10_465o5"]
+[ext_resource type="Texture2D" uid="uid://c0s6tsgumoh0n" path="res://Assets/sprites/ButtonHome.png" id="15_n5nwx"]
+[ext_resource type="Texture2D" uid="uid://k8se4fl1j23e" path="res://Assets/sprites/CoverImage.png" id="16_wismm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rpvy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dbfec"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ad6s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iysgs"]
 
 [node name="Intro" type="Node2D" unique_id=1057306331]
-
-[node name="IntroFondo" type="Sprite2D" parent="." unique_id=1610731181]
-position = Vector2(908, 514)
-texture = ExtResource("1_gjrx4")
+script = ExtResource("1_f4n53")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1535134844]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1329082480]
+
+[node name="Background" type="PanelContainer" parent="CanvasLayer" unique_id=1364116214]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -800.0
+offset_top = -800.0
+offset_right = 800.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1rpvy")
+
+[node name="BackgroundTexture" type="TextureRect" parent="CanvasLayer/Background" unique_id=1152031938]
+layout_mode = 2
+texture = ExtResource("1_33sem")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=634597949]
 anchors_preset = 1
@@ -22,8 +57,18 @@ anchor_right = 1.0
 offset_left = -172.0
 offset_bottom = 71.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dbfec")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/PanelContainer" unique_id=1651373520]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("3_wismm")
+texture_pressed = ExtResource("4_n5nwx")
+texture_hover = ExtResource("5_wismm")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=261788331]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
@@ -55,7 +100,6 @@ stretch_mode = 5
 
 [node name="BlueGemLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=2138957120]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
 text = "Text"
 horizontal_alignment = 1
 
@@ -68,3 +112,64 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Text"
 horizontal_alignment = 1
+
+[node name="TittleContainer" type="PanelContainer" parent="CanvasLayer" unique_id=2114239661]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -239.5
+offset_top = -77.5
+offset_right = 239.5
+offset_bottom = 77.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4ad6s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TittleContainer" unique_id=493585932]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TittleContainer" type="PanelContainer" parent="CanvasLayer/TittleContainer/VBoxContainer" unique_id=1961921059]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iysgs")
+
+[node name="TittleLabel" type="Label" parent="CanvasLayer/TittleContainer/VBoxContainer/TittleContainer" unique_id=663426830]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1.409397, 1.2133945, 1.3344548, 0.34117648)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("5_46ak0")
+theme_override_font_sizes/font_size = 100
+text = "OMNIUM"
+
+[node name="ButtonContainer" type="HBoxContainer" parent="CanvasLayer/TittleContainer/VBoxContainer" unique_id=489328068]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/TittleContainer/VBoxContainer/ButtonContainer" unique_id=959323580]
+layout_mode = 2
+texture_normal = ExtResource("6_1rpvy")
+texture_pressed = ExtResource("7_eejac")
+texture_hover = ExtResource("8_33olo")
+
+[node name="HomeButton" type="TextureButton" parent="CanvasLayer/TittleContainer/VBoxContainer/ButtonContainer" unique_id=143887611]
+layout_mode = 2
+texture_normal = ExtResource("7_6omm5")
+texture_pressed = ExtResource("10_465o5")
+texture_hover = ExtResource("15_n5nwx")
+
+[node name="CoverTransition" type="TextureRect" parent="CanvasLayer" unique_id=772565895]
+visible = false
+offset_left = -264.0
+offset_top = -499.0
+offset_right = 1479.0
+offset_bottom = 1150.0
+texture = ExtResource("16_wismm")
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TittleContainer/VBoxContainer/ButtonContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TittleContainer/VBoxContainer/ButtonContainer/HomeButton" to="." method="_on_home_button_pressed"]

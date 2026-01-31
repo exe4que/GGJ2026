@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dalaels21aoei"]
+
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="1_4dj0q"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_codc7"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_ph05w"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="4_4nsc6"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_ve7ue"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_unnmy"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_4nsc6"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="7_2o8vn"]
+[ext_resource type="Script" uid="uid://cjfu28jmrajlo" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="8_8bcao"]
+[ext_resource type="Material" uid="uid://dtrtjl62171q8" path="res://materials/MaterialLaser.tres" id="9_8bcao"]
+[ext_resource type="PackedScene" uid="uid://kde7u7ny4hnp" path="res://Intro.tscn" id="11_unnmy"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="12_h26av"]
+
+[sub_resource type="Resource" id="Resource_scm5r"]
+script = ExtResource("8_8bcao")
+metadata/_custom_type_script = "uid://cjfu28jmrajlo"
+
+[node name="Node3D" type="XROrigin3D" unique_id=1403402645]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1567022728]
+current = true
+
+[node name="LeftHand" type="XRController3D" parent="." unique_id=1608221137]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="LeftHand" unique_id=571834649 instance=ExtResource("1_4dj0q")]
+
+[node name="FunctionPickup" parent="LeftHand" unique_id=237285476 instance=ExtResource("2_codc7")]
+
+[node name="MovementDirect" parent="LeftHand" unique_id=512247328 instance=ExtResource("3_ph05w")]
+strafe = true
+
+[node name="FunctionPointer" parent="LeftHand" unique_id=2005286438 instance=ExtResource("4_4nsc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0.05, -0.1)
+show_laser = 2
+laser_length = 1
+laser_material = ExtResource("9_8bcao")
+
+[node name="RightHand" type="XRController3D" parent="." unique_id=68046927]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="RightHand" unique_id=671542536 instance=ExtResource("4_ve7ue")]
+
+[node name="FunctionPickup" parent="RightHand" unique_id=1622859121 instance=ExtResource("2_codc7")]
+
+[node name="MovementTurn" parent="RightHand" unique_id=2045204044 instance=ExtResource("5_unnmy")]
+turn_mode = 2
+
+[node name="MovementJump" parent="RightHand" unique_id=415010600 instance=ExtResource("6_4nsc6")]
+jump_button_action = "ax_button"
+
+[node name="FunctionPointer" parent="RightHand" unique_id=122900589 instance=ExtResource("4_4nsc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0.05, -0.1)
+show_laser = 2
+laser_length = 1
+laser_material = ExtResource("9_8bcao")
+
+[node name="PlayerBody" parent="." unique_id=737213032 instance=ExtResource("7_2o8vn")]
+player_height_min = 0.0
+player_height_max = 1.1
+physics = SubResource("Resource_scm5r")
+
+[node name="Viewport2Din3D" parent="." unique_id=841148330 instance=ExtResource("12_h26av")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.32386017, -0.3103943, -7.7597055)
+screen_size = Vector2(600, 600)
+scene = ExtResource("11_unnmy")
+viewport_size = Vector2(600, 600)
+transparent = 0
+unshaded = true
+scene_properties_keys = PackedStringArray("IntroButtons.gd")

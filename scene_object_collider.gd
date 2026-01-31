@@ -1,4 +1,4 @@
-extends Node3D
+extends CollisionObject3D
 
 @export var scene_id : String
 
@@ -7,4 +7,4 @@ func _ready() -> void:
 
 
 func _on_mask_changed(id):
-	visible = id == scene_id
+	set_collision_layer_value(1, id == scene_id)
