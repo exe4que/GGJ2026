@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://ijyrm7dol1wg"]
+
+[ext_resource type="FontFile" uid="uid://ddm08d2oxoqwp" path="res://Assets/fonts/Nasalization Rg.otf" id="1_bpmps"]
+[ext_resource type="Texture2D" uid="uid://dll0c8hsf12pd" path="res://Assets/sprites/panel-variant.png" id="2_0h05s"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lobmj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjvy3"]
+texture = ExtResource("2_0h05s")
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxTexture_lobmj")
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_bpmps")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_mjvy3")
