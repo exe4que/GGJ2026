@@ -2,22 +2,46 @@
 
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="1_psfsg"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_achac"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_6l10h"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_l6aur"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_scm5r"]
+[ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_scm5r"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_w822q"]
+[ext_resource type="Script" uid="uid://cjfu28jmrajlo" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="7_6l10h"]
+
+[sub_resource type="Resource" id="Resource_scm5r"]
+script = ExtResource("7_6l10h")
+metadata/_custom_type_script = "uid://cjfu28jmrajlo"
 
 [node name="Node3D" type="XROrigin3D" unique_id=1403402645]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1567022728]
+current = true
 
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1608221137]
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHand" unique_id=571834649 instance=ExtResource("1_psfsg")]
 
-[node name="FunctionPickup" parent="LeftHand/LeftHand" unique_id=237285476 instance=ExtResource("2_achac")]
+[node name="FunctionPickup" parent="LeftHand" unique_id=237285476 instance=ExtResource("2_achac")]
+
+[node name="MovementDirect" parent="LeftHand" unique_id=512247328 instance=ExtResource("3_6l10h")]
+strafe = true
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=68046927]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHand" unique_id=671542536 instance=ExtResource("3_l6aur")]
 
-[node name="FunctionPickup" parent="RightHand/RightHand" unique_id=1622859121 instance=ExtResource("2_achac")]
+[node name="FunctionPickup" parent="RightHand" unique_id=1622859121 instance=ExtResource("2_achac")]
+
+[node name="MovementTurn" parent="RightHand" unique_id=2045204044 instance=ExtResource("5_scm5r")]
+turn_mode = 2
+
+[node name="MovementJump" parent="RightHand" unique_id=415010600 instance=ExtResource("6_scm5r")]
+jump_button_action = "ax_button"
+
+[node name="PlayerBody" parent="." unique_id=737213032 instance=ExtResource("6_w822q")]
+player_height_min = 0.0
+player_height_max = 1.1
+physics = SubResource("Resource_scm5r")
