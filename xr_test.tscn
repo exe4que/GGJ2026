@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3ga7kxaungjx"]
 
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="1_psfsg"]
-[ext_resource type="Script" uid="uid://cws4wo5xiw2te" path="res://player.gd" id="1_w822q"]
+[ext_resource type="Script" path="res://player.gd" id="1_w822q"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_achac"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_6l10h"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="3_l6aur"]
