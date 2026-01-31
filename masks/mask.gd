@@ -8,4 +8,5 @@ func _ready() -> void:
 
 
 func _on_mask_pickedup(_mask):
+	print("picked up")
 	Global.change_mask.emit(id)
