@@ -8,3 +8,4 @@
 [node name="StartXR" parent="." unique_id=565972700 instance=ExtResource("1_jt635")]
 
 [node name="Node3D" parent="." unique_id=1403402645 instance=ExtResource("2_pv3hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083099365, 7.6293945e-06, -0.25416565)
