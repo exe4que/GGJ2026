@@ -63,10 +63,10 @@ player_height_max = 1.1
 physics = SubResource("Resource_scm5r")
 
 [node name="Viewport2Din3D" parent="." unique_id=841148330 instance=ExtResource("12_h26av")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.32386017, -0.3103943, -38.22146)
-screen_size = Vector2(1800, 1800)
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.32386017, -0.3103943, -7.7597055)
+screen_size = Vector2(600, 600)
 scene = ExtResource("11_unnmy")
-viewport_size = Vector2(1800, 1800)
-transparent = 1
+viewport_size = Vector2(600, 600)
+transparent = 0
 unshaded = true
 scene_properties_keys = PackedStringArray("IntroButtons.gd")
