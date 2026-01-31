@@ -15,6 +15,15 @@ run/main_scene="uid://b18bddnbfcmog"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+XRToolsUserSettings="*uid://bqgb8i74tm0t"
+XRToolsRumbleManager="*uid://by853dk86g1qw"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
+
 [input]
 
 change_to_blue={
@@ -35,3 +44,8 @@ change_to_red={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[xr]
+
+openxr/enabled=true
+shaders/enabled=true
