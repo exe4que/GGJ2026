@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://da1sqec2pbt56"]
+
+[ext_resource type="Shader" uid="uid://ubgdoit5dbmv" path="res://shaders/world_objects_shader.gdshader" id="1_t2rre"]
+[ext_resource type="Texture2D" uid="uid://bmi8vcuf4e3rw" path="res://Assets/textures/efecto.png" id="2_t1bhf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_t2rre")
+shader_parameter/wire_color = Color(1, 0.44042286, 0.904393, 1)
+shader_parameter/wire_width = 0.0250000011875
+shader_parameter/emission_strength = 5.3430002537925
+shader_parameter/transparency = 0.7010000332975
+shader_parameter/electricity_effect_texture = ExtResource("2_t1bhf")
+shader_parameter/electricity_length = 0.4750000225625
+shader_parameter/electricity_ray_duration = 2.6270001247825
+shader_parameter/electricity_delay_between_rays = 1.0000000475

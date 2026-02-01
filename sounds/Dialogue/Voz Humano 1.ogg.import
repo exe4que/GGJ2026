@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmddffxmr3qsh"
+path="res://.godot/imported/Voz Humano 1.ogg-75a217b65fac54349cab9e1fa86a44bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Dialogue/Voz Humano 1.ogg"
+dest_files=["res://.godot/imported/Voz Humano 1.ogg-75a217b65fac54349cab9e1fa86a44bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -33,6 +33,8 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://levels/": "green",
+"res://sounds/": "purple",
 "res://transitions/": "pink"
 }
 

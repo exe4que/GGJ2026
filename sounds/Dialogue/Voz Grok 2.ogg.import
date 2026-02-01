@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ccadpq57oy6e0"
+path="res://.godot/imported/Voz Grok 2.ogg-de4dcf8c15e0b3ac6eb4c9ed82108f40.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Dialogue/Voz Grok 2.ogg"
+dest_files=["res://.godot/imported/Voz Grok 2.ogg-de4dcf8c15e0b3ac6eb4c9ed82108f40.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

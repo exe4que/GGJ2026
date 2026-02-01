@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c4kxogyxvh7co"]
+
+[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://xr_test.tscn" id="1_bwjdx"]
+[ext_resource type="PackedScene" uid="uid://we6achi7ytes" path="res://godot_cube.tscn" id="2_ed2jg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bwjdx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 2.5
+
+[sub_resource type="Sky" id="Sky_ed2jg"]
+sky_material = SubResource("ProceduralSkyMaterial_bwjdx")
+
+[sub_resource type="Environment" id="Environment_5ojyh"]
+background_mode = 2
+sky = SubResource("Sky_ed2jg")
+tonemap_mode = 2
+glow_enabled = true
+glow_strength = 1.28
+
+[node name="TestShader" type="Node3D" unique_id=977512587]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=240041026]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1450065632]
+environment = SubResource("Environment_5ojyh")
+
+[node name="Node3D" parent="." unique_id=1403402645 instance=ExtResource("1_bwjdx")]
+
+[node name="cube" parent="." unique_id=1435702122 instance=ExtResource("2_ed2jg")]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.5, 0)
+
+[node name="cube2" parent="." unique_id=1229477787 instance=ExtResource("2_ed2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8532844, 1.5045283, 2.8050332)
+
+[node name="cube3" parent="." unique_id=1885405251 instance=ExtResource("2_ed2jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6869607, 1.5045283, -2.220957)
+
+[node name="cube4" parent="." unique_id=930252906 instance=ExtResource("2_ed2jg")]
+transform = Transform3D(1, 0, 0, 0, 3.4204614, 0, 0, 0, 1, -1.7839551, 3.9426668, 0.9022669)

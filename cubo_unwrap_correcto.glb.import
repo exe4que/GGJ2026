@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cx3i30kde773o"
-path="res://.godot/imported/cube_red.glb-523e83080929995067f3ca7444c634ef.scn"
+uid="uid://bpmgbyu6f02ib"
+path="res://.godot/imported/cubo_unwrap_correcto.glb-4cf50959d931d8696983765508e87c61.scn"
 
 [deps]
 
-source_file="res://cube_red.glb"
-dest_files=["res://.godot/imported/cube_red.glb-523e83080929995067f3ca7444c634ef.scn"]
+source_file="res://cubo_unwrap_correcto.glb"
+dest_files=["res://.godot/imported/cubo_unwrap_correcto.glb-4cf50959d931d8696983765508e87c61.scn"]
 
 [params]
 
@@ -38,22 +38,15 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
-"materials": {
-"Material": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://materials/MaterialRed.tres",
-"use_external/path": "uid://pdacc304d7vm"
-}
-},
 "meshes": {
-"cube_red_Cube": {
+"cubo_unwrap_correcto_Cube": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://cube_mesh.res",
-"save_to_file/path": "uid://cunsoln16sfys"
+"save_to_file/fallback_path": "res://cubo_unwrap_correcto.res",
+"save_to_file/path": "uid://dt67rdrq7wu8m"
 }
 }
 }

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://vrjxccrswwxk"
+path="res://.godot/imported/Omnium Lautaro E Monjo(2).ogg-082ab6c2d7be8fa96181d6b289140da7.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/Omnium Lautaro E Monjo(2).ogg"
+dest_files=["res://.godot/imported/Omnium Lautaro E Monjo(2).ogg-082ab6c2d7be8fa96181d6b289140da7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
