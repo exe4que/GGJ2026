@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cuxsxhaqy20d5" path="res://scene_object.gd" id="4_eqmdw"]
 [ext_resource type="PackedScene" uid="uid://c8ui1kjhmlb5j" path="res://old/sphere.glb" id="5_5ymk8"]
 [ext_resource type="Script" uid="uid://c1qtp3vlc7etl" path="res://scene_object_collider.gd" id="7_5fjre"]
-[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://old/xr_test.tscn" id="7_ctebd"]
+[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://xr_test.tscn" id="7_ctebd"]
 [ext_resource type="PackedScene" uid="uid://cntlwvs35c7qv" path="res://masks/mask_red.tscn" id="7_eqmdw"]
 [ext_resource type="PackedScene" uid="uid://ca4damwhtdiq5" path="res://masks/mask_blue.tscn" id="8_eqmdw"]
 

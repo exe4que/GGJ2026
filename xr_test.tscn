@@ -63,13 +63,12 @@ jump_button_action = "ax_button"
 [node name="PlayerBody" parent="." unique_id=737213032 instance=ExtResource("6_w822q")]
 floor_stop_on_slope = false
 platform_wall_layers = 1
-player_head_height = 0.8
-player_height_max = 1.2
 physics = SubResource("Resource_scm5r")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=664913504]
 
 [node name="PlayerVolume" type="Area3D" parent="." unique_id=1939457211]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerVolume" unique_id=841078705]
 shape = SubResource("CapsuleShape3D_02kgj")
