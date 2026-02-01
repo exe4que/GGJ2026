@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://beydbq44sq7fn"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bglh4ejn528kv"]
 
 [ext_resource type="Shader" uid="uid://bskl5gkw5hjf3" path="res://shaders/mask_objects.gdshader" id="1_chs0w"]
 [ext_resource type="Texture2D" uid="uid://b6c68tkmqpf4c" path="res://materials/Noise.png" id="2_1vrto"]

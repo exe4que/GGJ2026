@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://6uvn4ms0rutx"]
+
+[ext_resource type="Script" uid="uid://bmwdcukghe28" path="res://masks/mask.gd" id="1_ahkkf"]
+[ext_resource type="ArrayMesh" uid="uid://6e0xykouwhph" path="res://masks/mask_mesh.res" id="2_4hj1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh0rd"]
+size = Vector3(0.18457031, 0.22986221, 0.17407227)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ahkkf"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="mask_green" type="RigidBody3D" unique_id=95975201]
+collision_layer = 4
+collision_mask = 196615
+gravity_scale = 0.0
+freeze_mode = 1
+script = ExtResource("1_ahkkf")
+id = "green"
+
+[node name="collision" type="CollisionShape3D" parent="." unique_id=1432106727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0013670325, 0.067748636, -0.010817587)
+shape = SubResource("BoxShape3D_jh0rd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1409268980]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+mesh = ExtResource("2_4hj1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_ahkkf")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cgm8yud0atkw2"]
+
+[ext_resource type="ArrayMesh" uid="uid://cirdplxeag107" path="res://cubo_unwrap_correcto.res" id="1_jsi6t"]
+[ext_resource type="Shader" uid="uid://bskl5gkw5hjf3" path="res://shaders/mask_objects.gdshader" id="2_dsvj2"]
+[ext_resource type="Texture2D" uid="uid://b6c68tkmqpf4c" path="res://materials/Noise.png" id="3_b668n"]
+[ext_resource type="Script" uid="uid://c1qtp3vlc7etl" path="res://scene_object_collider.gd" id="3_hgmgg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bqjwe"]
+render_priority = 0
+shader = ExtResource("2_dsvj2")
+shader_parameter/color = Color(0, 0.88, 0.07333326, 1)
+shader_parameter/noise = ExtResource("3_b668n")
+shader_parameter/speed_mutiplier = 0.4
+shader_parameter/uv_multilplier = 0.1
+shader_parameter/paralax_multiplier = 0.5
+shader_parameter/emmission_multiplier = 2.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c5th"]
+size = Vector3(2, 2, 2)
+
+[node name="cube_red" type="Node3D" unique_id=1297097353]
+transform = Transform3D(8.4119625, 0, 0, 0, 0.8347862, 0, 0, 0, 3.421645, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1506876182]
+transform = Transform3D(1, 0, 0, 0, 1.038, 0, 0, 0, 1.038, 0, 0, 0)
+mesh = ExtResource("1_jsi6t")
+surface_material_override/0 = SubResource("ShaderMaterial_bqjwe")
+
+[node name="scene_collision2" type="StaticBody3D" parent="." unique_id=1641508228]
+script = ExtResource("3_hgmgg")
+scene_id = "red"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_collision2" unique_id=237272631]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_4c5th")
