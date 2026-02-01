@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://1m72hhlnloqd"]
+
+[ext_resource type="ArrayMesh" uid="uid://cirdplxeag107" path="res://cubo_unwrap_correcto.res" id="1_1po3q"]
+[ext_resource type="Shader" uid="uid://ubgdoit5dbmv" path="res://shaders/world_objects_shader.gdshader" id="2_mhr4j"]
+[ext_resource type="Texture2D" uid="uid://bmi8vcuf4e3rw" path="res://Assets/textures/efecto.png" id="3_xqbd4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thdc7"]
+render_priority = 0
+shader = ExtResource("2_mhr4j")
+shader_parameter/wire_color = Color(0.76562905, 0.70165485, 0, 1)
+shader_parameter/wire_width = 0.0250000011875
+shader_parameter/emission_strength = 5.3430002537925
+shader_parameter/transparency = 0.7010000332975
+shader_parameter/electricity_effect_texture = ExtResource("3_xqbd4")
+shader_parameter/electricity_length = 0.4750000225625
+shader_parameter/electricity_ray_duration = 1.1110000527725
+shader_parameter/electricity_delay_between_rays = 1.0000000475
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckhap"]
+size = Vector3(8.029541, 1, 8.019531)
+
+[node name="cube" type="Node3D" unique_id=1435702122]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2057240966]
+mesh = ExtResource("1_1po3q")
+surface_material_override/0 = SubResource("ShaderMaterial_thdc7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1865861218]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1442394027]
+shape = SubResource("BoxShape3D_ckhap")

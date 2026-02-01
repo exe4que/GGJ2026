@@ -28,6 +28,7 @@ shadow_enabled = true
 environment = SubResource("Environment_5ojyh")
 
 [node name="Node3D" parent="." unique_id=1403402645 instance=ExtResource("1_bwjdx")]
+script = null
 
 [node name="cube" parent="." unique_id=1435702122 instance=ExtResource("2_ed2jg")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -0.5, 0)

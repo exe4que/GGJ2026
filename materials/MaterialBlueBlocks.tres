@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c6q546c3iug8v"]
+
+[ext_resource type="Shader" uid="uid://bskl5gkw5hjf3" path="res://shaders/mask_objects.gdshader" id="1_mcyrm"]
+[ext_resource type="Texture2D" uid="uid://b6c68tkmqpf4c" path="res://materials/Noise.png" id="2_8n3xh"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mcyrm")
+shader_parameter/color = Color(0.003921569, 0.3137255, 1, 1)
+shader_parameter/noise = ExtResource("2_8n3xh")
+shader_parameter/speed_mutiplier = 0.2
