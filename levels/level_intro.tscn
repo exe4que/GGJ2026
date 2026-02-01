@@ -10,6 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://vrjxccrswwxk" path="res://sounds/Omnium Lautaro E Monjo(2).ogg" id="10_xjapb"]
 [ext_resource type="AudioStream" uid="uid://bgfsgl8j2g5d5" path="res://sounds/SFX SPAWN(1).ogg" id="11_mk5y5"]
 [ext_resource type="PackedScene" uid="uid://cntlwvs35c7qv" path="res://masks/mask_red.tscn" id="12_6gjgo"]
+[ext_resource type="Script" path="res://levels/sound_player.gd" id="13_cbc3l"]
+[ext_resource type="AudioStream" uid="uid://yqys4yo3w6s8" path="res://sounds/Dialogue/Voz Humano 2.ogg" id="14_akddf"]
+[ext_resource type="Script" uid="uid://d0dpbkportvtb" path="res://levels/intro_dialog.gd" id="17_quh8u"]
+[ext_resource type="AudioStream" uid="uid://bmddffxmr3qsh" path="res://sounds/Dialogue/Voz Humano 1.ogg" id="18_lhfxy"]
+[ext_resource type="AudioStream" uid="uid://cpnt7oex0wifl" path="res://sounds/Dialogue/Voz Grok 1.ogg" id="19_j5qsw"]
 [ext_resource type="Script" uid="uid://xtxrt04iq77y" path="res://levels/sound_player.gd" id="13_cbc3l"]
 [ext_resource type="AudioStream" uid="uid://ccadpq57oy6e0" path="res://sounds/Dialogue/Voz Grok 2.ogg" id="14_ddfsg"]
 [ext_resource type="AudioStream" uid="uid://ckciavj46vvq5" path="res://sounds/Dialogue/Voz Grok 3.ogg" id="15_quh8u"]
@@ -284,6 +289,19 @@ parameters/looping = true
 [node name="SpawnSound" type="AudioStreamPlayer" parent="sound" unique_id=956648070]
 stream = ExtResource("11_mk5y5")
 autoplay = true
+
+[node name="IntroDialog" type="Node3D" parent="sound" unique_id=539132566 node_paths=PackedStringArray("firs_sequence")]
+script = ExtResource("17_quh8u")
+firs_sequence = [NodePath("D1"), NodePath("D2"), NodePath("D3")]
+
+[node name="D1" type="AudioStreamPlayer" parent="sound/IntroDialog" unique_id=72982621]
+stream = ExtResource("18_lhfxy")
+
+[node name="D2" type="AudioStreamPlayer" parent="sound/IntroDialog" unique_id=1155178126]
+stream = ExtResource("19_j5qsw")
+
+[node name="D3" type="AudioStreamPlayer" parent="sound/IntroDialog" unique_id=1197219808]
+stream = ExtResource("14_akddf")
 
 [node name="first_mask_interaction" type="Node3D" parent="sound" unique_id=589880738]
 script = ExtResource("17_ddfsg")
