@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://qd4smn47r7c8"]
+
+[ext_resource type="Script" uid="uid://dvoj4vgvulvp0" path="res://moving_platform.gd" id="1_uyo6g"]
+[ext_resource type="ArrayMesh" uid="uid://cirdplxeag107" path="res://cubo_unwrap_correcto.res" id="2_kk50u"]
+[ext_resource type="Shader" uid="uid://ubgdoit5dbmv" path="res://shaders/world_objects_shader.gdshader" id="3_cood6"]
+[ext_resource type="Texture2D" uid="uid://bmi8vcuf4e3rw" path="res://Assets/textures/efecto.png" id="4_dsqr6"]
+[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://xr_test.tscn" id="5_cood6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thdc7"]
+render_priority = 0
+shader = ExtResource("3_cood6")
+shader_parameter/wire_color = Color(0.76562905, 0.70165485, 0, 1)
+shader_parameter/wire_width = 0.0250000011875
+shader_parameter/emission_strength = 5.3430002537925
+shader_parameter/transparency = 0.7010000332975
+shader_parameter/electricity_effect_texture = ExtResource("4_dsqr6")
+shader_parameter/electricity_length = 0.4750000225625
+shader_parameter/electricity_ray_duration = 1.1110000527725
+shader_parameter/electricity_delay_between_rays = 1.0000000475
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckhap"]
+size = Vector3(8.029541, 1, 8.019531)
+
+[node name="Hallway" type="Node3D" unique_id=795911504]
+
+[node name="cube2" type="AnimatableBody3D" parent="." unique_id=1350454300]
+sync_to_physics = false
+script = ExtResource("1_uyo6g")
+distance = 100.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="cube2" unique_id=2057240966]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
+mesh = ExtResource("2_kk50u")
+surface_material_override/0 = SubResource("ShaderMaterial_thdc7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube2" unique_id=1442394027]
+shape = SubResource("BoxShape3D_ckhap")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=999121813]
+transform = Transform3D(-0.60878116, 0.44883078, -0.6541685, 0, 0.8245771, 0.56574965, 0.7933382, 0.34441772, -0.501987, -26.441097, 22.769638, -11.748902)
+visible = false
+
+[node name="Node3D" parent="." unique_id=1403402645 instance=ExtResource("5_cood6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1404805, 0)
