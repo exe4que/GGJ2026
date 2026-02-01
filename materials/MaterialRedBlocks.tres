@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://beydbq44sq7fn"]
+
+[ext_resource type="Shader" uid="uid://bskl5gkw5hjf3" path="res://shaders/mask_objects.gdshader" id="1_chs0w"]
+[ext_resource type="Texture2D" uid="uid://b6c68tkmqpf4c" path="res://materials/Noise.png" id="2_1vrto"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_chs0w")
+shader_parameter/color = Color(0.88235295, 0, 0, 1)
+shader_parameter/noise = ExtResource("2_1vrto")
+shader_parameter/speed_mutiplier = 0.4
+shader_parameter/uv_multilplier = 0.1
+shader_parameter/paralax_multiplier = 0.5
+shader_parameter/emmission_multiplier = 2.5
