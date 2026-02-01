@@ -11,6 +11,18 @@ uniform float electricity_delay_between_rays : hint_range(0.0, 10.0) = 1;
 
 render_mode blend_mix, depth_draw_opaque;
 
+varying vec4 frag_uv;
+
+void vertex()
+{
+	vec3 world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	vec3 cam_to_frag = normalize(world_pos - CAMERA_POSITION_WORLD);
+	vec3 uv_camera_off = cam_to_frag - dot(NORMAL, cam_to_frag) * NORMAL;
+	frag_uv.xy = world_pos.xy * NORMAL.z + world_pos.xz * NORMAL.y + world_pos.yz * NORMAL.x;
+	frag_uv.zw = uv_camera_off.xy * NORMAL.z + uv_camera_off.xz * NORMAL.y + uv_camera_off.yz * NORMAL.x;
+}
+
+
 float peak(float x, float start, float len) {
 	    float t = (x - start) / len;   // normaliza a 0–1
 	    t = clamp(t, 0.0, 1.0);
