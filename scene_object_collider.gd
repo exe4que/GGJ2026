@@ -4,7 +4,7 @@ extends CollisionObject3D
 
 func _ready() -> void:
 	Global.change_mask.connect(_on_mask_changed)
-
+	set_collision_layer_value(1, scene_id == "none")
 
 func _on_mask_changed(id):
 	set_collision_layer_value(1, id == scene_id)

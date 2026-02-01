@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cdhre152x3qjy"]
+
+[ext_resource type="Texture2D" uid="uid://k8se4fl1j23e" path="res://Assets/sprites/CoverImage.png" id="1_e5g02"]
+[ext_resource type="Script" uid="uid://bllb5k8m2mg5m" path="res://transitions/cover_transition.gd" id="1_vfrpk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35v0q"]
+size = Vector2(960, 959)
+
+[node name="cover_transition" type="Area2D" unique_id=871422168]
+script = ExtResource("1_vfrpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=912123024]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("1_e5g02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=170795685]
+position = Vector2(4, -1.5)
+shape = SubResource("RectangleShape2D_35v0q")

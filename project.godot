@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 XRToolsUserSettings="*uid://bqgb8i74tm0t"
 XRToolsRumbleManager="*uid://by853dk86g1qw"
 Global="*uid://dh00wbrrte34o"
+SceneLoader="*uid://duf6kk7rdam5d"
 
 [debug_draw_3d]
 
@@ -36,6 +37,8 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://levels/": "green",
+"res://sounds/": "purple",
 "res://transitions/": "pink"
 }
 
