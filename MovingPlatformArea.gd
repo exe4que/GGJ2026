@@ -1,9 +1,13 @@
 extends Area3D
 
+func _ready() -> void:
+	self.area_entered.connect(_on_area_body_entered)
+	self.area_exited.connect(_on_area_body_exited)
+	print("holaaa")
+	
+
 func _on_area_body_entered(body):
-	if body.name == "XROrigin3D":
-		body.reparent(self, true)
+	print(str(body.name, " detectadoooooo!!!!!!"))
 
 func _on_area_body_exited(body):
-	if body.name == "XROrigin3D":
-		body.reparent(get_tree().current_scene, true)
+	print(str(body.name, " chauuuuuuuu!!!!!!"))
