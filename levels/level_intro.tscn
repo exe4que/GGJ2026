@@ -15,7 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://bgfsgl8j2g5d5" path="res://sounds/SFX SPAWN(1).ogg" id="11_mk5y5"]
 [ext_resource type="PackedScene" uid="uid://cntlwvs35c7qv" path="res://masks/mask_red.tscn" id="12_6gjgo"]
 [ext_resource type="Script" uid="uid://xtxrt04iq77y" path="res://levels/sound_player.gd" id="13_cbc3l"]
-[ext_resource type="AudioStream" uid="uid://yqys4yo3w6s8" path="res://sounds/Dialogue/Voz Humano 2.ogg" id="14_akddf"]
+[ext_resource type="AudioStream" uid="uid://ccadpq57oy6e0" path="res://sounds/Dialogue/Voz Grok 2.ogg" id="14_ddfsg"]
+[ext_resource type="AudioStream" uid="uid://ckciavj46vvq5" path="res://sounds/Dialogue/Voz Grok 3.ogg" id="15_quh8u"]
+[ext_resource type="Script" uid="uid://d4u1vcf2k7l7" path="res://levels/first_mask_interaction_sound.gd" id="17_ddfsg"]
+[ext_resource type="AudioStream" uid="uid://ce7tygxmgotlq" path="res://sounds/Dialogue/Voz Humano 3.ogg" id="18_quh8u"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4mnpp"]
 radius = 0.11815425
@@ -60,7 +63,10 @@ size = Vector3(1.9126587, 1.8344116, 2.1019897)
 size = Vector3(2.2661896, 2.2238464, 2.1271667)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xjapb"]
-size = Vector3(4.2070923, 5.012146, 7.689575)
+size = Vector3(5.564644, 5.012146, 6.5683746)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhfxy"]
+size = Vector3(3.0057373, 3.5583496, 4.2546997)
 
 [node name="main_level" type="Node3D" unique_id=200706420]
 
@@ -331,29 +337,31 @@ shape = SubResource("BoxShape3D_6gjgo")
 
 [node name="sound" type="Node3D" parent="." unique_id=1184809090]
 
-[node name="first_voice" type="Node3D" parent="sound" unique_id=170425777]
+[node name="ia_voice_2" type="Node3D" parent="sound" unique_id=1246887540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.470787, -9.536743e-07, -18.688837)
 script = ExtResource("13_cbc3l")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound/first_voice" unique_id=1639832537]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound/ia_voice_2" unique_id=1028423438]
+stream = ExtResource("14_ddfsg")
 
-[node name="Area3D" type="Area3D" parent="sound/first_voice" unique_id=698046593]
+[node name="Area3D" type="Area3D" parent="sound/ia_voice_2" unique_id=152000759]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="sound/first_voice/Area3D" unique_id=1785523910]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18341064, 0.61001587, 1.348938)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sound/ia_voice_2/Area3D" unique_id=723974277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6682167, 0.61001587, 1.4094925)
 shape = SubResource("BoxShape3D_xjapb")
 
-[node name="first_voice2" type="Node3D" parent="sound" unique_id=1246887540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9179068, -9.536743e-07, -18.688837)
+[node name="ia_voice_3" type="Node3D" parent="sound" unique_id=1022947356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.375113, -9.536743e-07, 28.345533)
 script = ExtResource("13_cbc3l")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound/first_voice2" unique_id=1028423438]
-stream = ExtResource("14_akddf")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound/ia_voice_3" unique_id=599458629]
+stream = ExtResource("15_quh8u")
 
-[node name="Area3D" type="Area3D" parent="sound/first_voice2" unique_id=152000759]
+[node name="Area3D" type="Area3D" parent="sound/ia_voice_3" unique_id=1534988299]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="sound/first_voice2/Area3D" unique_id=723974277]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.184906, 0.61001587, 1.348938)
-shape = SubResource("BoxShape3D_xjapb")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sound/ia_voice_3/Area3D" unique_id=994051841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2638321, 0.8681946, -17.643631)
+shape = SubResource("BoxShape3D_lhfxy")
 
 [node name="MusicAmbience" type="AudioStreamPlayer" parent="sound" unique_id=1666173390]
 stream = ExtResource("10_xjapb")
@@ -362,4 +370,11 @@ parameters/looping = true
 
 [node name="SpawnSound" type="AudioStreamPlayer" parent="sound" unique_id=956648070]
 stream = ExtResource("11_mk5y5")
+autoplay = true
+
+[node name="first_mask_interaction" type="Node3D" parent="sound" unique_id=589880738]
+script = ExtResource("17_ddfsg")
+
+[node name="FirstMaskSound" type="AudioStreamPlayer" parent="sound/first_mask_interaction" unique_id=1965510713]
+stream = ExtResource("18_quh8u")
 autoplay = true
