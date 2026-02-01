@@ -29,13 +29,18 @@ func transition_in(target_scene: String):
 	print("Tween done")
 	
 func _on_scene_loaded():
+	var intro_scene = get_node("/root/MainMenu")
+	SceneLoader.unload_scene(intro_scene)
+	return 
+	
 		# Fade to transparent
 	var tween = create_tween()
 	tween.tween_property(Fade, "color", Color(0, 0, 0, 0), duration / 2)
-	var intro_scene = get_parent()
+	
+	print(intro_scene)
 	var background = $Background
 	background.visible = false
-	tween.tween_callback(func(): SceneLoader.unload_scene(intro_scene))
+	#tween.tween_callback(func(): )
 	print("Transition done")
 	pass
 	
