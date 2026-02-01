@@ -15,6 +15,8 @@
 script = ExtResource("7_6l10h")
 metadata/_custom_type_script = "uid://cjfu28jmrajlo"
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_02kgj"]
+
 [node name="Node3D" type="XROrigin3D" unique_id=1403402645]
 script = ExtResource("1_w822q")
 
@@ -66,3 +68,8 @@ player_height_max = 1.2
 physics = SubResource("Resource_scm5r")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=664913504]
+
+[node name="PlayerVolume" type="Area3D" parent="." unique_id=1939457211]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerVolume" unique_id=841078705]
+shape = SubResource("CapsuleShape3D_02kgj")

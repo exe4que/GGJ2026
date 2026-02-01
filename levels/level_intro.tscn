@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://y2bpc3fgn83j"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_4c5th"]
+[ext_resource type="PackedScene" uid="uid://bqyb0co6mborv" path="res://levels/blocks/block_blue.tscn" id="4_6gjgo"]
 [ext_resource type="ArrayMesh" uid="uid://dt67rdrq7wu8m" path="res://cubo_unwrap_correcto.res" id="4_kyo8j"]
-[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://xr_test.tscn" id="4_mk5y5"]
+[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://old/xr_test.tscn" id="4_mk5y5"]
 [ext_resource type="Script" uid="uid://cuxsxhaqy20d5" path="res://scene_object.gd" id="5_6gjgo"]
 [ext_resource type="Material" uid="uid://bls15aoxe06h4" path="res://materials/MaterialBlue.tres" id="5_xjapb"]
 [ext_resource type="Script" uid="uid://c1qtp3vlc7etl" path="res://scene_object_collider.gd" id="7_akddf"]
@@ -13,12 +14,19 @@
 [ext_resource type="AudioStream" uid="uid://vrjxccrswwxk" path="res://sounds/Omnium Lautaro E Monjo(2).ogg" id="10_xjapb"]
 [ext_resource type="AudioStream" uid="uid://bgfsgl8j2g5d5" path="res://sounds/SFX SPAWN(1).ogg" id="11_mk5y5"]
 [ext_resource type="PackedScene" uid="uid://cntlwvs35c7qv" path="res://masks/mask_red.tscn" id="12_6gjgo"]
+[ext_resource type="Script" path="res://levels/sound_player.gd" id="13_cbc3l"]
+[ext_resource type="AudioStream" uid="uid://yqys4yo3w6s8" path="res://sounds/Dialogue/Voz Humano 2.ogg" id="14_akddf"]
+[ext_resource type="Script" uid="uid://d0dpbkportvtb" path="res://levels/intro_dialog.gd" id="17_quh8u"]
+[ext_resource type="AudioStream" uid="uid://bmddffxmr3qsh" path="res://sounds/Dialogue/Voz Humano 1.ogg" id="18_lhfxy"]
+[ext_resource type="AudioStream" uid="uid://cpnt7oex0wifl" path="res://sounds/Dialogue/Voz Grok 1.ogg" id="19_j5qsw"]
+[ext_resource type="Script" uid="uid://xtxrt04iq77y" path="res://levels/sound_player.gd" id="13_cbc3l"]
+[ext_resource type="AudioStream" uid="uid://ccadpq57oy6e0" path="res://sounds/Dialogue/Voz Grok 2.ogg" id="14_ddfsg"]
+[ext_resource type="AudioStream" uid="uid://ckciavj46vvq5" path="res://sounds/Dialogue/Voz Grok 3.ogg" id="15_quh8u"]
+[ext_resource type="Script" uid="uid://d4u1vcf2k7l7" path="res://levels/first_mask_interaction_sound.gd" id="17_ddfsg"]
+[ext_resource type="AudioStream" uid="uid://ce7tygxmgotlq" path="res://sounds/Dialogue/Voz Humano 3.ogg" id="18_quh8u"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4mnpp"]
 radius = 0.11815425
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4c5th"]
-size = Vector3(2.0814972, 1.9699974, 2.0117378)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cbc3l"]
 size = Vector3(2.0340347, 1.9699974, 1.3222704)
@@ -26,11 +34,14 @@ size = Vector3(2.0340347, 1.9699974, 1.3222704)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ddfsg"]
 size = Vector3(2.0340347, 1.9699974, 1.6047518)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_akddf"]
-size = Vector3(0.3713932, 1.9699974, 2.0117378)
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c5th"]
+size = Vector3(2.0814972, 1.9699974, 2.0117378)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uhmka"]
 size = Vector3(1.9619026, 1.4320335, 1.9713182)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akddf"]
+size = Vector3(0.3713932, 1.9699974, 2.0117378)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nqxoc"]
 size = Vector3(1.8126831, 1.6917267, 2.221115)
@@ -57,7 +68,10 @@ size = Vector3(1.9126587, 1.8344116, 2.1019897)
 size = Vector3(2.2661896, 2.2238464, 2.1271667)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xjapb"]
-size = Vector3(6.210083, 5.012146, 7.689575)
+size = Vector3(5.564644, 5.012146, 6.5683746)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhfxy"]
+size = Vector3(3.0057373, 3.5583496, 4.2546997)
 
 [node name="main_level" type="Node3D" unique_id=200706420]
 
@@ -86,21 +100,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.28425, 0, -28.377974)
 script = ExtResource("5_6gjgo")
 scene_id = "blue"
 
-[node name="cube_blue" type="Node3D" parent="blue_scene" unique_id=1541321142]
+[node name="cube_blue" parent="blue_scene" unique_id=1297097353 instance=ExtResource("4_6gjgo")]
 transform = Transform3D(8.4119625, 0, 0, 0, 0.8347862, 0, 0, 0, 3.421645, -15.907131, -1.8685837, 10.718428)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="blue_scene/cube_blue" unique_id=1122537968]
-transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
-mesh = ExtResource("4_kyo8j")
-surface_material_override/0 = ExtResource("5_xjapb")
-
-[node name="scene_collision2" type="StaticBody3D" parent="blue_scene/cube_blue" unique_id=1428736858]
-script = ExtResource("7_akddf")
-scene_id = "blue"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="blue_scene/cube_blue/scene_collision2" unique_id=431816447]
-transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.044044495, 0.06327605, -0.018615723)
-shape = SubResource("BoxShape3D_4c5th")
 
 [node name="cube_blue5" type="Node3D" parent="blue_scene" unique_id=481066680]
 transform = Transform3D(8.4119625, 0, 0, 0, 0.8347862, 0, 0, 0, 3.421645, 2.1306787, -1.8685837, 39.367645)
@@ -150,54 +151,6 @@ scene_id = "blue"
 transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.044044495, 0.06327605, -0.018615723)
 shape = SubResource("BoxShape3D_4c5th")
 
-[node name="cube_red" type="Node3D" parent="blue_scene" unique_id=79843479]
-transform = Transform3D(0.077517755, 0, -3.4214997, 0, 0.8347862, 0, 8.411606, 0, 0.031531077, 20.191069, -1.8685837, 27.84105)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="blue_scene/cube_red" unique_id=443286236]
-transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
-mesh = ExtResource("4_kyo8j")
-surface_material_override/0 = ExtResource("7_mk5y5")
-
-[node name="scene_collision2" type="StaticBody3D" parent="blue_scene/cube_red" unique_id=736475948]
-script = ExtResource("7_akddf")
-scene_id = "red"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="blue_scene/cube_red/scene_collision2" unique_id=1219024053]
-transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.044044495, 0.06327605, -0.018615723)
-shape = SubResource("BoxShape3D_4c5th")
-
-[node name="cube_red2" type="Node3D" parent="blue_scene" unique_id=1210898074]
-transform = Transform3D(0.077517755, 0, -3.4214997, 0, 0.8347862, 0, 8.411606, 0, 0.031531077, -12.275016, -1.8685837, 42.428062)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="blue_scene/cube_red2" unique_id=399771814]
-transform = Transform3D(0.16770655, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.42289904, 0, -0.33869588)
-mesh = ExtResource("4_kyo8j")
-surface_material_override/0 = ExtResource("7_mk5y5")
-
-[node name="scene_collision2" type="StaticBody3D" parent="blue_scene/cube_red2" unique_id=190550394]
-script = ExtResource("7_akddf")
-scene_id = "red"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="blue_scene/cube_red2/scene_collision2" unique_id=968686721]
-transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, -7.450581e-09, 0, 1, -0.4461292, 0.06327605, -0.31356335)
-shape = SubResource("BoxShape3D_akddf")
-
-[node name="cube_red3" type="Node3D" parent="blue_scene" unique_id=1590593507]
-transform = Transform3D(0.07751774, -0.8346239, 0.059653576, 0, -0.014554435, -3.421125, 8.411605, 0.007691535, -0.0005497348, -15.68087, 1.1631432, 42.275753)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="blue_scene/cube_red3" unique_id=496577634]
-transform = Transform3D(0.16770655, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.42289904, 0, -0.33869588)
-mesh = ExtResource("4_kyo8j")
-surface_material_override/0 = ExtResource("7_mk5y5")
-
-[node name="scene_collision2" type="StaticBody3D" parent="blue_scene/cube_red3" unique_id=405686109]
-script = ExtResource("7_akddf")
-scene_id = "red"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="blue_scene/cube_red3/scene_collision2" unique_id=775894343]
-transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, -7.450581e-09, 0, 1, -0.4461292, 0.06327605, -0.31356335)
-shape = SubResource("BoxShape3D_akddf")
-
 [node name="cube_blue2" parent="blue_scene" unique_id=2102965314 instance=ExtResource("8_4v7tt")]
 transform = Transform3D(0.10711996, -0.83461976, 0, 5.3642564, 0.0166667, 0, 0, 0, 3.1697106, 5.126838, 4.184812, 10.718428)
 
@@ -209,144 +162,237 @@ scene_id = "blue"
 transform = Transform3D(0.99999845, 0, 0, -8.940697e-08, 1.0000002, 0, 0, 0, 0.999999, 0.00817287, 0.42554855, 0.014283657)
 shape = SubResource("BoxShape3D_uhmka")
 
+[node name="red_scene" type="Node3D" parent="." unique_id=1747734665]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.28425, 0, -28.377974)
+script = ExtResource("5_6gjgo")
+scene_id = "red"
+
+[node name="cube_red" type="Node3D" parent="red_scene" unique_id=1867239137]
+transform = Transform3D(0.077517755, 0, -3.4214997, 0, 0.8347862, 0, 8.411606, 0, 0.031531077, 20.191069, -1.8685837, 27.84105)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="red_scene/cube_red" unique_id=597641393]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("4_kyo8j")
+surface_material_override/0 = ExtResource("7_mk5y5")
+
+[node name="scene_collision2" type="StaticBody3D" parent="red_scene/cube_red" unique_id=986974815]
+script = ExtResource("7_akddf")
+scene_id = "red"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="red_scene/cube_red/scene_collision2" unique_id=1414921753]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0.044044495, 0.06327605, -0.018615723)
+shape = SubResource("BoxShape3D_4c5th")
+
+[node name="cube_red2" type="Node3D" parent="red_scene" unique_id=666187706]
+transform = Transform3D(0.077517755, 0, -3.4214997, 0, 0.8347862, 0, 8.411606, 0, 0.031531077, -12.275016, -1.8685837, 42.428062)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="red_scene/cube_red2" unique_id=1795991892]
+transform = Transform3D(0.16770655, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.42289904, 0, -0.33869588)
+mesh = ExtResource("4_kyo8j")
+surface_material_override/0 = ExtResource("7_mk5y5")
+
+[node name="scene_collision2" type="StaticBody3D" parent="red_scene/cube_red2" unique_id=928426943]
+script = ExtResource("7_akddf")
+scene_id = "red"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="red_scene/cube_red2/scene_collision2" unique_id=1962992450]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, -7.450581e-09, 0, 1, -0.4461292, 0.06327605, -0.31356335)
+shape = SubResource("BoxShape3D_akddf")
+
+[node name="cube_red3" type="Node3D" parent="red_scene" unique_id=2018732263]
+transform = Transform3D(0.07751774, -0.8346239, 0.059653576, 0, -0.014554435, -3.421125, 8.411605, 0.007691535, -0.0005497348, -15.68087, 1.1631432, 42.275753)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="red_scene/cube_red3" unique_id=39913681]
+transform = Transform3D(0.16770655, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.42289904, 0, -0.33869588)
+mesh = ExtResource("4_kyo8j")
+surface_material_override/0 = ExtResource("7_mk5y5")
+
+[node name="scene_collision2" type="StaticBody3D" parent="red_scene/cube_red3" unique_id=450805204]
+script = ExtResource("7_akddf")
+scene_id = "red"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="red_scene/cube_red3/scene_collision2" unique_id=1864612731]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000001, 0, -7.450581e-09, 0, 1, -0.4461292, 0.06327605, -0.31356335)
+shape = SubResource("BoxShape3D_akddf")
+
 [node name="mask_blue" parent="." unique_id=1015629672 instance=ExtResource("10_quh8u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3303347, 0.08547658, -17.821096)
 
-[node name="cube" parent="." unique_id=1435702122 instance=ExtResource("7_nqxoc")]
+[node name="mask_red" parent="." unique_id=95975201 instance=ExtResource("12_6gjgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.332806, -0.9027936, -12.88891)
+
+[node name="normal_level" type="Node3D" parent="." unique_id=1186575194]
+
+[node name="cube" parent="normal_level" unique_id=1435702122 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(3.0240078, 0, 0, 0, 3.2416902, 0, 0, 0, 10, 0, -4.255412, -4.5485954)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube" unique_id=537538753]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube" unique_id=537538753]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube/scene_collision3" unique_id=1532735020]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube/scene_collision3" unique_id=1532735020]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.032958977, 0.15442455, -0.13367462)
 shape = SubResource("BoxShape3D_nqxoc")
 
-[node name="cube13" parent="." unique_id=1639321713 instance=ExtResource("7_nqxoc")]
+[node name="cube13" parent="normal_level" unique_id=1639321713 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(3.0240078, 0, 0, 0, 3.2416902, 0, 0, 0, 10, 9.351111, -4.255412, 36.08341)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube13" unique_id=485906271]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube13" unique_id=485906271]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube13/scene_collision3" unique_id=1528742107]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube13/scene_collision3" unique_id=1528742107]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, -0.07944465, 0.15442455, -0.013110161)
 shape = SubResource("BoxShape3D_quh8u")
 
-[node name="cube5" parent="." unique_id=1032571168 instance=ExtResource("7_nqxoc")]
+[node name="cube5" parent="normal_level" unique_id=1032571168 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(3.0240078, 0, 0, 0, 3.2416902, 0, 0, 0, 10, 53.89293, -4.255412, -7.9908943)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube5" unique_id=491455329]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube5" unique_id=491455329]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube5/scene_collision3" unique_id=1607086873]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube5/scene_collision3" unique_id=1607086873]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_mk5y5")
 
-[node name="cube7" parent="." unique_id=1212803803 instance=ExtResource("7_nqxoc")]
+[node name="cube7" parent="normal_level" unique_id=1212803803 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(1.075307, 0, 0, 0, 3.2416902, 0, 0, 0, 1.4285172, 20.317377, -4.255412, 10.316872)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube7" unique_id=1148828782]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube7" unique_id=1148828782]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube7/scene_collision3" unique_id=932923665]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube7/scene_collision3" unique_id=932923665]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_4v7tt")
 
-[node name="cube8" parent="." unique_id=1849726057 instance=ExtResource("7_nqxoc")]
+[node name="cube8" parent="normal_level" unique_id=1849726057 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(1.075307, 0, 0, 0, 3.2416902, 0, 0, 0, 1.4285172, 11.980764, -4.255412, 10.316872)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube8" unique_id=1356104060]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube8" unique_id=1356104060]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube8/scene_collision3" unique_id=1120878794]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube8/scene_collision3" unique_id=1120878794]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_4v7tt")
 
-[node name="cube9" parent="." unique_id=194945076 instance=ExtResource("7_nqxoc")]
+[node name="cube9" parent="normal_level" unique_id=194945076 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(1.075307, 0, 0, 0, 3.2416902, 0, 0, 0, 1.4285172, 3.690113, -4.255412, 10.236923)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube9" unique_id=1422265889]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube9" unique_id=1422265889]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube9/scene_collision3" unique_id=354256947]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube9/scene_collision3" unique_id=354256947]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_4v7tt")
 
-[node name="cube10" parent="." unique_id=1631350718 instance=ExtResource("7_nqxoc")]
+[node name="cube10" parent="normal_level" unique_id=1631350718 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(1.075307, 0, 0, 0, 3.2416902, 0, 0, 0, 1.4285172, 3.3718734, 2.4847898, 27.416023)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube10" unique_id=1158307561]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube10" unique_id=1158307561]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube10/scene_collision3" unique_id=1802094852]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube10/scene_collision3" unique_id=1802094852]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_4v7tt")
 
-[node name="cube11" parent="." unique_id=1951675809 instance=ExtResource("7_nqxoc")]
+[node name="cube11" parent="normal_level" unique_id=1951675809 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(1.075307, 0, 0, 0, 3.2416902, 0, 0, 0, 1.4285172, 11.694498, 2.4847898, 27.416023)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube11" unique_id=363082126]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube11" unique_id=363082126]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube11/scene_collision3" unique_id=1155005393]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube11/scene_collision3" unique_id=1155005393]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_4v7tt")
 
-[node name="cube12" parent="." unique_id=766490616 instance=ExtResource("7_nqxoc")]
-transform = Transform3D(0.0054801623, 3.241648, 0, -1.0752931, 0.016520852, 0, 0, 0, 1.4285172, 7.4845695, 6.778639, 27.416023)
+[node name="cube12" parent="normal_level" unique_id=766490616 instance=ExtResource("7_nqxoc")]
+transform = Transform3D(0.0054801623, 7.035602, 0, -1.0752931, 0.035856497, 0, 0, 0, 1.4285172, 7.4845695, 6.778639, 27.416023)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube12" unique_id=872957389]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube12" unique_id=872957389]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube12/scene_collision3" unique_id=688592138]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube12/scene_collision3" unique_id=688592138]
 transform = Transform3D(0.9999979, 0, 0, 0, 1, 0, 0, 0, 1, 0.027544022, 0.15442455, -0.082004845)
 shape = SubResource("BoxShape3D_4v7tt")
 
-[node name="cube2" parent="." unique_id=1094589726 instance=ExtResource("7_nqxoc")]
+[node name="cube2" parent="normal_level" unique_id=1094589726 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(-1.3218357e-07, 0, -6.091155, 0, 3.2416902, 0, 3.0240078, 0, -2.6625284e-07, -3.0890079, -4.255412, -17.611603)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube2" unique_id=541111661]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube2" unique_id=541111661]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube2/scene_collision3" unique_id=924391731]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube2/scene_collision3" unique_id=924391731]
 transform = Transform3D(0.9999979, 0, 0, 0, 0.9999998, 0, 1.2434498e-14, 0, 1, 0.08226824, 0.09087396, -0.045799136)
 shape = SubResource("BoxShape3D_kyo8j")
 
-[node name="cube3" parent="." unique_id=1393131826 instance=ExtResource("7_nqxoc")]
+[node name="cube3" parent="normal_level" unique_id=1393131826 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(-1.3218357e-07, 0, -6.091155, 0, 3.2416902, 0, 3.0240078, 0, -2.6625284e-07, 25.865507, -4.255412, -17.6116)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube3" unique_id=839516342]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube3" unique_id=839516342]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube3/scene_collision3" unique_id=669622182]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube3/scene_collision3" unique_id=669622182]
 transform = Transform3D(0.9999979, 0, 0, 0, 0.9999998, 0, 1.2434498e-14, 0, 1, 0.08345032, 0.123160794, -0.018157959)
 shape = SubResource("BoxShape3D_nkyub")
 
-[node name="cube4" parent="." unique_id=637364033 instance=ExtResource("7_nqxoc")]
+[node name="cube4" parent="normal_level" unique_id=637364033 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(-1.3218357e-07, 0, -6.091155, 0, 3.2416902, 0, 3.0240078, 0, -2.6625284e-07, 38.061916, -4.255412, -17.6116)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube4" unique_id=977964784]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube4" unique_id=977964784]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube4/scene_collision3" unique_id=424341254]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube4/scene_collision3" unique_id=424341254]
 transform = Transform3D(0.9999979, 0, 0, 0, 0.9999998, 0, 1.2434498e-14, 0, 1, 0.060578346, 0.10749614, 0.05584669)
 shape = SubResource("BoxShape3D_ranbk")
 
-[node name="cube6" parent="." unique_id=1958500877 instance=ExtResource("7_nqxoc")]
+[node name="cube6" parent="normal_level" unique_id=1958500877 instance=ExtResource("7_nqxoc")]
 transform = Transform3D(-1.3218357e-07, 0, -6.091155, 0, 3.2416902, 0, 3.0240078, 0, -2.6625284e-07, 38.061916, -4.255412, 4.1593323)
 
-[node name="scene_collision3" type="StaticBody3D" parent="cube6" unique_id=1886343484]
+[node name="scene_collision3" type="StaticBody3D" parent="normal_level/cube6" unique_id=1886343484]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube6/scene_collision3" unique_id=1270554055]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="normal_level/cube6/scene_collision3" unique_id=1270554055]
 transform = Transform3D(0.9999979, 0, 0, 0, 0.9999998, 0, 1.2434498e-14, 0, 1, 0.020135045, -0.087221265, 0.04325819)
 shape = SubResource("BoxShape3D_6gjgo")
 
-[node name="first_voice" type="Node3D" parent="." unique_id=170425777]
+[node name="sound" type="Node3D" parent="." unique_id=1184809090]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="first_voice" unique_id=1639832537]
+[node name="ia_voice_2" type="Node3D" parent="sound" unique_id=1246887540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.470787, -9.536743e-07, -18.688837)
+script = ExtResource("13_cbc3l")
 
-[node name="Area3D" type="Area3D" parent="first_voice" unique_id=698046593]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound/ia_voice_2" unique_id=1028423438]
+stream = ExtResource("14_ddfsg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="first_voice/Area3D" unique_id=1785523910]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18341064, 0.61001587, 1.348938)
+[node name="Area3D" type="Area3D" parent="sound/ia_voice_2" unique_id=152000759]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sound/ia_voice_2/Area3D" unique_id=723974277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6682167, 0.61001587, 1.4094925)
 shape = SubResource("BoxShape3D_xjapb")
 
-[node name="MusicAmbience" type="AudioStreamPlayer" parent="." unique_id=1666173390]
+[node name="ia_voice_3" type="Node3D" parent="sound" unique_id=1022947356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.375113, -9.536743e-07, 28.345533)
+script = ExtResource("13_cbc3l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound/ia_voice_3" unique_id=599458629]
+stream = ExtResource("15_quh8u")
+
+[node name="Area3D" type="Area3D" parent="sound/ia_voice_3" unique_id=1534988299]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sound/ia_voice_3/Area3D" unique_id=994051841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2638321, 0.8681946, -17.643631)
+shape = SubResource("BoxShape3D_lhfxy")
+
+[node name="MusicAmbience" type="AudioStreamPlayer" parent="sound" unique_id=1666173390]
 stream = ExtResource("10_xjapb")
 autoplay = true
 parameters/looping = true
 
-[node name="SpawnSound" type="AudioStreamPlayer" parent="." unique_id=956648070]
+[node name="SpawnSound" type="AudioStreamPlayer" parent="sound" unique_id=956648070]
 stream = ExtResource("11_mk5y5")
 autoplay = true
 
-[node name="mask_red" parent="." unique_id=95975201 instance=ExtResource("12_6gjgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.332806, -0.9027936, -12.88891)
+[node name="IntroDialog" type="Node3D" parent="sound" unique_id=539132566 node_paths=PackedStringArray("firs_sequence")]
+script = ExtResource("17_quh8u")
+firs_sequence = [NodePath("D1"), NodePath("D2"), NodePath("D3")]
+
+[node name="D1" type="AudioStreamPlayer" parent="sound/IntroDialog" unique_id=72982621]
+stream = ExtResource("18_lhfxy")
+
+[node name="D2" type="AudioStreamPlayer" parent="sound/IntroDialog" unique_id=1155178126]
+stream = ExtResource("19_j5qsw")
+
+[node name="D3" type="AudioStreamPlayer" parent="sound/IntroDialog" unique_id=1197219808]
+stream = ExtResource("14_akddf")
+
+[node name="first_mask_interaction" type="Node3D" parent="sound" unique_id=589880738]
+script = ExtResource("17_ddfsg")
+
+[node name="FirstMaskSound" type="AudioStreamPlayer" parent="sound/first_mask_interaction" unique_id=1965510713]
+stream = ExtResource("18_quh8u")
+autoplay = true

@@ -2,19 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://bhuvdbhjnggam" path="res://Assets/sprites/Background.jpeg" id="1_33sem"]
 [ext_resource type="Script" uid="uid://bqiyek26k1x6b" path="res://canvas_fade.gd" id="1_mmn27"]
-[ext_resource type="Texture2D" uid="uid://dueyu6t3gp6p1" path="res://Assets/sprites/gem-blue.png" id="2_33sem"]
-[ext_resource type="Texture2D" uid="uid://cvchr42n2kg3n" path="res://Assets/sprites/gem-orange.png" id="3_46ak0"]
 [ext_resource type="Texture2D" uid="uid://b4angk24eie07" path="res://Assets/sprites/SelectExit.png" id="3_wismm"]
-[ext_resource type="Texture2D" uid="uid://do341457fiajy" path="res://Assets/sprites/gem-pink.png" id="4_iysgs"]
 [ext_resource type="Texture2D" uid="uid://jw8ap5aa7rii" path="res://Assets/sprites/PressedExit.png" id="4_n5nwx"]
 [ext_resource type="FontFile" uid="uid://7km1j6gaaj01" path="res://Assets/fonts/space age.ttf" id="5_46ak0"]
 [ext_resource type="Texture2D" uid="uid://ddsv81eeyt6i4" path="res://Assets/sprites/ButtonExit.png" id="5_wismm"]
 [ext_resource type="Texture2D" uid="uid://dvo388fhdcmmj" path="res://Assets/sprites/SelectPlay.png" id="6_1rpvy"]
-[ext_resource type="Texture2D" uid="uid://o1y7gn722cit" path="res://Assets/sprites/SelectHome.png" id="7_6omm5"]
 [ext_resource type="Texture2D" uid="uid://bpo0v75lhwpjo" path="res://Assets/sprites/PressedPlay.png" id="7_eejac"]
 [ext_resource type="Texture2D" uid="uid://ji2bdy0btwqb" path="res://Assets/sprites/ButtonPlay.png" id="8_33olo"]
-[ext_resource type="Texture2D" uid="uid://c2m11abvoermh" path="res://Assets/sprites/PressedHome.png" id="10_465o5"]
-[ext_resource type="Texture2D" uid="uid://c0s6tsgumoh0n" path="res://Assets/sprites/ButtonHome.png" id="15_n5nwx"]
 [ext_resource type="PackedScene" uid="uid://dk43btyw2088w" path="res://transitions/fade.tscn" id="16_mmn27"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rpvy"]
@@ -32,7 +26,7 @@ visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1329082480]
 script = ExtResource("1_mmn27")
-next_scene = "main_level"
+next_scene = "level_intro"
 duration = 5.0
 
 [node name="Background" type="PanelContainer" parent="CanvasLayer" unique_id=1364116214]
@@ -82,15 +76,10 @@ size_flags_horizontal = 4
 
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer/Background/TittleContainer/VBoxContainer/ButtonContainer" unique_id=959323580]
 layout_mode = 2
+action_mode = 0
 texture_normal = ExtResource("6_1rpvy")
 texture_pressed = ExtResource("7_eejac")
 texture_hover = ExtResource("8_33olo")
-
-[node name="HomeButton" type="TextureButton" parent="CanvasLayer/Background/TittleContainer/VBoxContainer/ButtonContainer" unique_id=143887611]
-layout_mode = 2
-texture_normal = ExtResource("7_6omm5")
-texture_pressed = ExtResource("10_465o5")
-texture_hover = ExtResource("15_n5nwx")
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=634597949]
 anchors_preset = 1
@@ -108,52 +97,6 @@ size_flags_vertical = 0
 texture_normal = ExtResource("3_wismm")
 texture_pressed = ExtResource("4_n5nwx")
 texture_hover = ExtResource("5_wismm")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=261788331]
-visible = false
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 5
-
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=1003983126]
-layout_mode = 2
-theme_override_constants/h_separation = 25
-columns = 3
-
-[node name="BlueGem" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=962256111]
-layout_mode = 2
-texture = ExtResource("2_33sem")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="OrangeGem" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=1179444151]
-layout_mode = 2
-texture = ExtResource("3_46ak0")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="PinkGem" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=1338587466]
-layout_mode = 2
-texture = ExtResource("4_iysgs")
-expand_mode = 4
-stretch_mode = 5
-
-[node name="BlueGemLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=2138957120]
-layout_mode = 2
-text = "Text"
-horizontal_alignment = 1
-
-[node name="OrangeGemLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=391541640]
-layout_mode = 2
-text = "Text"
-horizontal_alignment = 1
-
-[node name="PinkGemLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer" unique_id=1342820754]
-layout_mode = 2
-text = "Text"
-horizontal_alignment = 1
 
 [node name="Fade" parent="CanvasLayer" unique_id=412601731 instance=ExtResource("16_mmn27")]
 size_flags_horizontal = 6

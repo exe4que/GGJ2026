@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjjr1o5ohrlik" path="res://cube_blue.glb" id="3_xe6ny"]
 [ext_resource type="Script" uid="uid://cuxsxhaqy20d5" path="res://scene_object.gd" id="4_6apxd"]
 [ext_resource type="PackedScene" uid="uid://cx3i30kde773o" path="res://cube_red.glb" id="5_7j56v"]
-[ext_resource type="PackedScene" uid="uid://c8ui1kjhmlb5j" path="res://sphere.glb" id="6_16grf"]
+[ext_resource type="PackedScene" uid="uid://c8ui1kjhmlb5j" path="res://old/sphere.glb" id="6_16grf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ymk8"]
 size = Vector3(1.8825684, 1.9137878, 2.2144775)
