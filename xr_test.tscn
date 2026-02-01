@@ -59,8 +59,8 @@ turn_mode = 2
 jump_button_action = "ax_button"
 
 [node name="PlayerBody" parent="." unique_id=737213032 instance=ExtResource("6_w822q")]
+floor_stop_on_slope = false
 platform_wall_layers = 1
-player_radius = 0.1
 player_head_height = 0.8
 player_height_max = 1.2
 physics = SubResource("Resource_scm5r")
