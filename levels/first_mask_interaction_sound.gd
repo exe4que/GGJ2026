@@ -6,5 +6,6 @@ func _ready() -> void:
 
 
 func _on_mask_changed(mask):
-	$FirstMaskSound.play()
-	Global.change_mask.disconnect(_on_mask_changed)
+	if mask == "blue":
+		$FirstMaskSound.play()
+		Global.change_mask.disconnect(_on_mask_changed)
