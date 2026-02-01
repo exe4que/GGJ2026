@@ -7,15 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_ve7ue"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_unnmy"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="6_4nsc6"]
-[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="7_2o8vn"]
-[ext_resource type="Script" uid="uid://cjfu28jmrajlo" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="8_8bcao"]
 [ext_resource type="Material" uid="uid://dtrtjl62171q8" path="res://materials/MaterialLaser.tres" id="9_8bcao"]
 [ext_resource type="PackedScene" uid="uid://kde7u7ny4hnp" path="res://Intro.tscn" id="11_unnmy"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="12_h26av"]
-
-[sub_resource type="Resource" id="Resource_scm5r"]
-script = ExtResource("8_8bcao")
-metadata/_custom_type_script = "uid://cjfu28jmrajlo"
 
 [node name="Node3D" type="XROrigin3D" unique_id=1403402645]
 
@@ -57,11 +51,6 @@ show_laser = 2
 laser_length = 1
 laser_material = ExtResource("9_8bcao")
 
-[node name="PlayerBody" parent="." unique_id=737213032 instance=ExtResource("7_2o8vn")]
-player_height_min = 0.0
-player_height_max = 1.1
-physics = SubResource("Resource_scm5r")
-
 [node name="Viewport2Din3D" parent="." unique_id=841148330 instance=ExtResource("12_h26av")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.32386017, -0.3103943, -7.7597055)
 screen_size = Vector2(600, 600)
@@ -69,4 +58,4 @@ scene = ExtResource("11_unnmy")
 viewport_size = Vector2(600, 600)
 transparent = 0
 unshaded = true
-scene_properties_keys = PackedStringArray("IntroButtons.gd")
+scene_properties_keys = PackedStringArray()

@@ -30,8 +30,7 @@ func _on_scene_loaded():
 		# Fade to transparent
 	var tween = create_tween()
 	tween.tween_property(Fade, "color", Color(0, 0, 0, 0), duration / 2)
-	var intro_scene = get_node("/root/Intro")
-	print(intro_scene)
+	var intro_scene = get_parent()
 	var background = $Background
 	background.visible = false
 	tween.tween_callback(func(): SceneLoader.unload_scene(intro_scene))

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4kxogyxvh7co"]
 
-[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://xr_test.tscn" id="1_bwjdx"]
+[ext_resource type="PackedScene" uid="uid://3ga7kxaungjx" path="res://old/xr_test.tscn" id="1_bwjdx"]
 [ext_resource type="PackedScene" uid="uid://we6achi7ytes" path="res://godot_cube.tscn" id="2_ed2jg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bwjdx"]

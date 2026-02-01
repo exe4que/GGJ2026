@@ -38,6 +38,8 @@ enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
 folder_colors={
 "res://levels/": "green",
+"res://old/": "red",
+"res://shaders/": "green",
 "res://sounds/": "purple",
 "res://transitions/": "pink"
 }
@@ -82,6 +84,7 @@ change_to_red={
 
 rendering_device/driver.windows="d3d12"
 gl_compatibility/fallback_to_gles=false
+environment/defaults/default_clear_color=Color(0.028278254, 0.010336265, 0.019047406, 1)
 
 [xr]
 
