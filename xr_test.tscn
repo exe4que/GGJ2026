@@ -64,3 +64,5 @@ platform_wall_layers = 1
 player_head_height = 0.8
 player_height_max = 1.2
 physics = SubResource("Resource_scm5r")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." unique_id=664913504]
