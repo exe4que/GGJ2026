@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bqyb0co6mborv"]
+
+[ext_resource type="ArrayMesh" uid="uid://dt67rdrq7wu8m" path="res://cubo_unwrap_correcto.res" id="1_50eub"]
+[ext_resource type="Material" uid="uid://c6q546c3iug8v" path="res://materials/MaterialBlueBlocks.tres" id="2_1fqo2"]
+[ext_resource type="Script" uid="uid://c1qtp3vlc7etl" path="res://scene_object_collider.gd" id="3_3myk5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c5th"]
+size = Vector3(2, 2, 2)
+
+[node name="cube_blue" type="Node3D" unique_id=1297097353]
+transform = Transform3D(8.4119625, 0, 0, 0, 0.8347862, 0, 0, 0, 3.421645, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1506876182]
+transform = Transform3D(1, 0, 0, 0, 1.038, 0, 0, 0, 1.038, 0, 0, 0)
+mesh = ExtResource("1_50eub")
+surface_material_override/0 = ExtResource("2_1fqo2")
+
+[node name="scene_collision2" type="StaticBody3D" parent="." unique_id=1641508228]
+script = ExtResource("3_3myk5")
+scene_id = "blue"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scene_collision2" unique_id=237272631]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.0000002, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_4c5th")
