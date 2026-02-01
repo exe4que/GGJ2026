@@ -3,6 +3,9 @@ shader_type spatial;
 uniform vec3 color : source_color = vec3(0.0, 0.0, 0.0);
 uniform sampler2D noise : source_color, repeat_enable;
 uniform float speed_mutiplier = 1;
+uniform float uv_multilplier = 0.1;
+uniform float paralax_multiplier = 0.5;
+uniform float emmission_multiplier = 0.5;
 
 render_mode blend_mix, depth_draw_opaque;
 
@@ -20,11 +23,11 @@ void vertex()
 void fragment() 
 {
 	float time = TIME * speed_mutiplier;
-	vec2 world_uv = vec2(frag_uv.x, frag_uv.y) * 0.04;
+	vec2 world_uv = vec2(frag_uv.x, frag_uv.y) * uv_multilplier;
 	//vec2 uv1 = vec2(UV.x + time * 0.02634513, UV.y - time * 0.037152563);
 	vec2 uv1 = vec2(world_uv.x + time * 0.02634513, world_uv.y - time * 0.037152563);
 	vec2 uv2 = vec2(world_uv.x - time * 0.02956377, world_uv.y - time * 0.028462617);
-	world_uv += frag_uv.zw * 0.4;
+	world_uv += frag_uv.zw * paralax_multiplier;
 	vec2 uv3 = vec2(world_uv.x - time * 0.03175893, world_uv.y + time * 0.041982837);
 	vec2 uv4 = vec2(world_uv.x + time * 0.02784382, world_uv.y + time * 0.031957362);
 	vec4 noise1 = texture(noise, uv1);
@@ -34,7 +37,7 @@ void fragment()
     ALBEDO = color.rgb;
 	ALBEDO *= (noise1.r * noise3.g + noise2.b * noise4.a) + 0.1;
 	ALPHA = ALBEDO.r + ALBEDO.g + ALBEDO.b;
-	EMISSION = color.rgb * ALPHA * ALPHA * 2.0;
+	EMISSION = color.rgb * ALPHA * ALPHA * emmission_multiplier;
 	ALPHA = ALPHA * ALPHA + 0.5;
 	
 }
