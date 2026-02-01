@@ -290,100 +290,100 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244, 22, 0)
 [node name="mask_green75" parent="." unique_id=1530780926 instance=ExtResource("7_4dvt0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 22, 0)
 
-[node name="cube_red2" parent="." unique_id=570045897 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 34, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red2" unique_id=108803689]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red2/Area3D" unique_id=1382425814]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red3" parent="." unique_id=1656378369 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 54, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red3" unique_id=794398915]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red3/Area3D" unique_id=784645005]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red4" parent="." unique_id=1769006126 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 134, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red4" unique_id=68274100]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red4/Area3D" unique_id=1323500530]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red5" parent="." unique_id=774089716 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 174, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red5" unique_id=422943492]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red5/Area3D" unique_id=2003400259]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red6" parent="." unique_id=949319870 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 214, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red6" unique_id=1934929056]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red6/Area3D" unique_id=1122631950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red7" parent="." unique_id=90490256 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 334, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red7" unique_id=1164344607]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red7/Area3D" unique_id=1620150359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red8" parent="." unique_id=936765058 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 374, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red8" unique_id=882290747]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red8/Area3D" unique_id=1473676142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red9" parent="." unique_id=611350289 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 394, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red9" unique_id=837091046]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red9/Area3D" unique_id=1850932924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
-[node name="cube_red10" parent="." unique_id=90405242 instance=ExtResource("6_yp7ym")]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 434, -4, 0)
-
-[node name="Area3D" type="Area3D" parent="cube_red10" unique_id=245694592]
-script = ExtResource("4_54oo0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_red10/Area3D" unique_id=804477540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
-shape = SubResource("CylinderShape3D_3r841")
-
 [node name="RED" type="Node3D" parent="." unique_id=433067710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, -4, 0)
 script = ExtResource("5_yjw8g")
 scene_id = "red"
+
+[node name="cube_red2" parent="RED" unique_id=570045897 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red2" unique_id=108803689]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red2/Area3D" unique_id=1382425814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red3" parent="RED" unique_id=1656378369 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 20, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red3" unique_id=794398915]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red3/Area3D" unique_id=784645005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red4" parent="RED" unique_id=1769006126 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 100, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red4" unique_id=68274100]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red4/Area3D" unique_id=1323500530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red5" parent="RED" unique_id=774089716 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 140, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red5" unique_id=422943492]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red5/Area3D" unique_id=2003400259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red6" parent="RED" unique_id=949319870 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 180, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red6" unique_id=1934929056]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red6/Area3D" unique_id=1122631950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red7" parent="RED" unique_id=90490256 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 300, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red7" unique_id=1164344607]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red7/Area3D" unique_id=1620150359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red8" parent="RED" unique_id=936765058 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 340, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red8" unique_id=882290747]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red8/Area3D" unique_id=1473676142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red9" parent="RED" unique_id=611350289 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 360, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red9" unique_id=837091046]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red9/Area3D" unique_id=1850932924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
+
+[node name="cube_red10" parent="RED" unique_id=90405242 instance=ExtResource("6_yp7ym")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 4, 400, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="RED/cube_red10" unique_id=245694592]
+script = ExtResource("4_54oo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RED/cube_red10/Area3D" unique_id=804477540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3528137, 0)
+shape = SubResource("CylinderShape3D_3r841")
 
 [node name="BLUE" type="Node3D" parent="." unique_id=1053119614]
 script = ExtResource("5_yjw8g")
