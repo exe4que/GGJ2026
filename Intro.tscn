@@ -26,7 +26,7 @@ visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1329082480]
 script = ExtResource("1_mmn27")
-next_scene = "main_level"
+next_scene = "level_intro"
 duration = 5.0
 
 [node name="Background" type="PanelContainer" parent="CanvasLayer" unique_id=1364116214]
